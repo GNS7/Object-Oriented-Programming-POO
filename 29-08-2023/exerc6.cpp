@@ -15,8 +15,8 @@ int main() {
     cout << "Digite 3 valores: " << endl;
     cin >> arr[0] >> arr[1] >> arr[2];
 
-    int n = sizeof(arr) / sizeof(arr[0]); // get the size of the array
-    sort(arr, arr + n); // sort the array in ascending order
+    int n = sizeof(arr) / sizeof(arr[0]);
+    sort(arr, arr + n);
 
     for (int i = 0; i < n; i++) {
         cout << arr[i] << " ";
