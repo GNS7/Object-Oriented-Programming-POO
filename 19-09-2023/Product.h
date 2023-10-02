@@ -5,19 +5,34 @@
 #ifndef OBJECT_ORIENTED_PROGRAMMING_POO_PRODUCT_H
 #define OBJECT_ORIENTED_PROGRAMMING_POO_PRODUCT_H
 
+#include <iostream>
+#include <string>
 
 class Product {
 private:
+    std::string name;
     float price;
-    int quantity_stocked;
+    int quantity;
 public:
-    int getPrice() { return this->price; };
-    int getQuantity() { return this->quantity_stocked;};
-    void setPrice(float value) { this->price = value;};
-    void setQuantity(int value) { this->quantity_stocked = value};
+    std::string getName() { return name; };
 
-    Product();
-    ~Product();
+    int getPrice() { return this->price; };
+
+    int getQuantity() { return this->quantity; };
+
+    void setPrice(float value) { this->price = value; };
+
+    void setQuantity(int value) { this->quantity = value; };
+
+    void setProduct(std::string n, float p, int q) {
+        this->name = n;
+        this->price = p;
+        this->quantity = q;
+    }
+
+    Product() {};
+
+    ~Product() {};
 };
 
 

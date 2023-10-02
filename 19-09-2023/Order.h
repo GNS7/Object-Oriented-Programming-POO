@@ -5,7 +5,8 @@
 #ifndef OBJECT_ORIENTED_PROGRAMMING_POO_ORDER_H
 #define OBJECT_ORIENTED_PROGRAMMING_POO_ORDER_H
 
-#include "Ordered_Product.h"
+#include "Product.h"
+#include <string>
 
 enum PaymentType {
     credit, debit, cash, bank_cheque
@@ -14,18 +15,22 @@ enum PaymentType {
 class Order {
 private:
     int quant;
-    Ordered_Product items[4];
-    int payment_type;
+    Product items[3];
+    std::string payment_type;
 public:
     int getQuant() { return quant; }
 
-    Ordered_Product *getProducts() { return items; }
+    Product *getProducts() { return items; }
 
-    int getPaymentType() { return payment_type; }
+    std::string getPaymentType() { return payment_type; }
 
-    Order();
+    void setProduct(Product *p) { for (int i = 0; i < 3; i++) { this->items[i] = p[i]; }; }
 
-    ~Order();
+    void setPaymentType(std::string p_t) { this->payment_type = p_t; }
+
+    Order() {};
+
+    ~Order() {};
 
 };
 
